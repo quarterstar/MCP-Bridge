@@ -103,6 +103,16 @@
               doCheck = false;
             };
 
+            mcp = super.mcp.overridePythonAttrs (_old: {
+              version = "1.2.0";
+              src = pkgs.fetchPypi {
+                pname = "mcp";
+                version = "1.2.0";
+                hash = "sha256-KwbH7OmNbqnmN5yqONdLQyOFwzj7Uwy4Lixw6nrdlPU=";
+              };
+              doCheck = false;
+            });
+
             mcpx = self.buildPythonPackage rec {
               pname = "mcpx";
               version = "0.1.1";
